@@ -1,8 +1,3 @@
-import requests
+import pyupbit
 
-url = "https://api.upbit.com/v1/trades/ticks?market=KRW-BTC&count=300"
-resp = requests.get(url)
-ticks = resp.json()
-
-for tick in ticks:
-    print(tick)
+print(pyupbit.get_tick(ticker="KRW-BTC", count=500))
